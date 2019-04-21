@@ -3,23 +3,23 @@
     <Navbar/>
     <h1 class="display-2 text-md-center text welcome">Welcome.</h1>
     
-    <v-container class="container">
-        <h2 class="mt-5 pl-5 pt-5 text">Enter your name:</h2>
+    <v-container class="container container">
+        <h2 class="mt-3 px-3 pt-3 text">Enter your name:</h2>
         <v-text-field 
           flat 
           box 
           label="Name"
           v-model="name"
-          class="pl-5 pt-3" 
+          class="px-3 pt-3" 
           background-color="white" 
           @keypress.enter="enterChat"
         >
         </v-text-field>
-        <p v-if="feedback" class="red--text pl-5">{{ feedback }}</p>
+        <p v-if="feedback" class="red--text px-3">{{ feedback }}</p>
         <v-btn 
           flat 
           large 
-          class="ml-5 submit"
+          class="mx-3 submit"
           @click="enterChat"
         >
           enter chat
@@ -78,6 +78,13 @@
     text-transform: capitalize;
     font-size: 16px;
     font-weight: 500;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .container {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   
 </style>
