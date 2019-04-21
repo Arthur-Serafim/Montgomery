@@ -1,12 +1,17 @@
 <template>
   <v-toolbar 
-    app
     flat
     class="navbar"
   >
     <img src="@/logo.png" class="logo" alt="logo" height="45rem">
     <v-spacer></v-spacer>
-    <v-btn flat huge color="white" v-if="chat">
+    <v-btn 
+      flat 
+      large 
+      v-if="chat" 
+      @click="home"
+      class="white--text"  
+    >
       <v-icon class="mr-1">exit_to_app</v-icon>
       Log out  
     </v-btn>
@@ -15,7 +20,12 @@
 
 <script>
 export default {
-  props: ['chat']
+  props: ['chat'],
+  methods: {
+    home() {
+      this.$router.push({ name: 'Welcome'})
+    }
+  },
 }
 </script>
 
